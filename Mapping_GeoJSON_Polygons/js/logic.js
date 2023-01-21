@@ -4,46 +4,6 @@ console.log("working");
 // Create the map object with center at the San Francisco airport.
 let map = L.map('mapid').setView([37.5, -122.5], 10);
 
-// Add GeoJSON data.
-let sanFranAirport =
-{"type":"FeatureCollection","features":[{
-    "type":"Feature",
-    "properties":{
-        "id":"3469",
-        "name":"San Francisco International Airport",
-        "city":"San Francisco",
-        "country":"United States",
-        "faa":"SFO",
-        "icao":"KSFO",
-        "alt":"14",
-        "tz-offset":"-8",
-        "dst":"A",
-        "tz":"America/Los_Angeles"},
-        "geometry":{
-            "type":"Point",
-            "coordinates":[-122.375,37.61899948120117]}}
-]};
-
-// GeoJSON data coordinates are set with the first parameter as X (longitude) 
-// and the second parameter as Y (latitude), as documented in the GeoJSON Standard. 
-// The L.geoJSON()layer reverses the coordinates to plot them on the map.
-
-// Grabbing our GeoJSON data.
-// L.geoJSON(geojsonFeature).addTo(map);
-// L.geoJSON(sanFranAirport).addTo(map);
-
-// // Grabbing our GeoJSON data.
-// L.geoJSON(sanFranAirport, {
-//   // We turn each feature into a marker on the map.
-//   pointToLayer: function(feature, latlng) {
-//     console.log(feature);
-//     return L.marker(latlng)
-//     .addTo(map)
-//     .bindPopup("<h2>" + feature.properties.name + ": "+ feature.properties.city + ", CA" + "</h2>")
-//     .openPopup();
-//   }
-
-// }).addTo(map);
 
 L.geoJSON(sanFranAirport, {
   // We turn each feature into a marker on the map.
